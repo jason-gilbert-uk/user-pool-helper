@@ -91,24 +91,34 @@ Dependencies: aws-sdk
       async function getAllUsersInfo(userPoolId) {
           console.log('getAllUsersInfo')
         let userParams  = { UserPoolId: userPoolId}
+        console.log('user params:')
+        console.log(userParams);
         try {
             let userData = await cognito.listUsers(userParams).promise();
+            console.log('user data:')
+            console.log(userData)
     
             for (let i=0;i<userData.Users.length;i++) {
                 var groupParams = { UserPoolId : userPoolId,Username: userData.Users[i].Username}
                 try {
                         const groupData = await cognito.adminListGroupsForUser(groupParams).promise();
+                        console.log('groupData:')
+                        console.log(groupData)
                         const groupsForUser = groupData.Groups.map(group=>group.GroupName);
                         userData.Users[i].groups =["*NONE*"];
                         if (groupsForUser) {
                             userData.Users[i].groups = groupsForUser;
                         }
+                        console.log('userData[i] :')
+                        console.log(userData.Users[i])
         
                 } catch (err) {
                     console.log("getUserInfo encounted error: ",err);
                     return {}
                 }   
             }
+            console.log('userData.Users:')
+            console.log(userData.Users)
             return userData.Users;
 
         } catch(err) {
