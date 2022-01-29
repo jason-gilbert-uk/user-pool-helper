@@ -1,0 +1,22 @@
+{
+  "name": "@jasongilbertuk/user-pool-helper",
+  "version": "1.0.0",
+  "description": "Helper functions for AWS Amplify User Pools",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jason-gilbert-uk/user-pool-helper.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jason-gilbert-uk/user-pool-helper/issues"
+  },
+  "homepage": "https://github.com/jason-gilbert-uk/user-pool-helper#readme",
+  "dependencies": {
+    "aws-sdk": "^2.1066.0"
+  }
+}
