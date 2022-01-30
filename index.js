@@ -92,7 +92,7 @@ Dependencies: aws-sdk
         let userParams  = { UserPoolId: userPoolId}
         try {
             let userData = await cognito.listUsers(userParams).promise();
-        
+
             for (let i=0;i<userData.Users.length;i++) {
                 var groupParams = { UserPoolId : userPoolId,Username: userData.Users[i].Username}
                 try {
@@ -122,7 +122,7 @@ Dependencies: aws-sdk
             let response = await cognito.createGroup(userParams).promise();
             return response;
         } catch (err) {
-            console.log('createGroup error occured: ',err)
+            console.log('error in createGroup: ',err)
         }
     }
     
