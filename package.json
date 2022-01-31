@@ -1,6 +1,6 @@
 {
   "name": "@jasongilbertuk/user-pool-helper",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Helper functions for AWS Amplify User Pools",
   "main": "index.js",
   "scripts": {
