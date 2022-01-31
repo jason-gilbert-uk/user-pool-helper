@@ -141,4 +141,4 @@ Dependencies: aws-sdk
     exports.getUserInfo = getUserInfo;
     exports.getAllUsersInfo = getAllUsersInfo;
     exports.createGroup = createGroup;
-    exports.createGroup = listGroups;
+    exports.listGroups = listGroups;
