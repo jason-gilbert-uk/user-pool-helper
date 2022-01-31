@@ -126,6 +126,19 @@ Dependencies: aws-sdk
         }
     }
     
+    async function listGroups(userPoolId) {
+        let userParams  = {UserPoolId: userPoolId}
+        try {
+            let response = await cognito.listGroups(userParams).promise();
+            console.log(response);
+            return response;
+        } catch (err) {
+            console.log('error in listGroups: ',err)
+        }
+    }
+    
+    
     exports.getUserInfo = getUserInfo;
     exports.getAllUsersInfo = getAllUsersInfo;
     exports.createGroup = createGroup;
+    exports.createGroup = listGroups;
